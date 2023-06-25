@@ -19,6 +19,14 @@ class Student extends Model
         'exam'
     ];
 
+    protected $attributes = [
+        'quiz' => 0,
+        'assigment' => 0,
+        'attendance' => 0,
+        'practice' => 0,
+        'exam' => 0
+    ];
+
     public function getScores() {
         $quiz = $this->quiz;
         $assigment = $this->assigment;

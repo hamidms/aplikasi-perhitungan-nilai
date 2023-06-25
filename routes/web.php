@@ -19,4 +19,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'StudentController@index');
 Route::post('/student/create', 'StudentController@create');
-
+Route::get('/student/{id}/edit', 'StudentController@edit');

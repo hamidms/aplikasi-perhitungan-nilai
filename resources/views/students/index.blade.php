@@ -10,7 +10,7 @@
           <!-- Button trigger modal -->
           <div class="float-end">
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Launch demo modal
+                  Tambah Data Mahasiswa
               </button>
           </div>
     
@@ -23,21 +23,24 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="form-floating">
-                    <input type="text" class="form-control" id="inputName" placeholder="Nama Lengkap Mahasiswa">
-                    <label for="inputName">Nama Mahasiswa</label>
+                <form action="/student/create" method="post">
+                    @csrf
+                    <div class="form-floating">
+                        <input type="text" name="name" class="form-control" id="inputName" placeholder="Nama Lengkap Mahasiswa">
+                        <label for="inputName">Nama Mahasiswa</label>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating">
+                        <input type="text" name="nim" class="form-control" id="inputNIM" placeholder="Nomor Induk Mahasiswa">
+                        <label for="inputNIM">Nomor Induk Mahasiswa</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
                 </form>
-            </div>
-            <div class="modal-body">
-                <form class="form-floating">
-                    <input type="text" class="form-control" id="inputNIM" placeholder="Nomor Induk Mahasiswa">
-                    <label for="inputNIM">Nomor Induk Mahasiswa</label>
-                </form>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
         </div>
         </div>
     </div>
@@ -62,7 +65,7 @@
                         <td>{{ $student->getScores() }}</td>
                         <td>{{ $student->getGrades() }}</td>
                         <td>
-                            <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="/student/{{ $student->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                             <a href="#" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>

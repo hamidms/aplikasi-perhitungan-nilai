@@ -43,7 +43,7 @@
                                 <label for="inputExam">Nilai Exam</label>
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="/" class="btn btn-outline-secondary">Kembali</a>
+                            <a href="/student" class="btn btn-outline-secondary">Kembali</a>
                         </div>
                     </div>
                 </form><!-- End General Form Elements -->

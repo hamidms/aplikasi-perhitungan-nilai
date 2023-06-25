@@ -14,7 +14,7 @@ class StudentController extends Controller
     public function create(Request $request) {
         \App\Models\Student::create($request->all());
 
-        return redirect('/')->with('sukses', 'Data berhasil diinput');
+        return redirect('/student')->with('sukses', 'Data berhasil diinput');
     }
 
     public function edit($id) {
@@ -26,12 +26,12 @@ class StudentController extends Controller
         $student = \App\Models\Student::find($id);
         $student->update($request->all());
 
-        return redirect('/')->with('sukses', 'Data berhasil diinput');
+        return redirect('/student')->with('sukses', 'Data berhasil diinput');
     }
 
     public function delete($id) {
         $student = \App\Models\Student::find($id);
         $student->delete($student);
-        return redirect('/')->with('sukses', 'Data berhasil dihapus');
+        return redirect('/student')->with('sukses', 'Data berhasil dihapus');
     }
 }

@@ -25,12 +25,10 @@
             <div class="modal-body">
                 <form action="/student/create" method="post">
                     @csrf
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         <input type="text" name="name" class="form-control" id="inputName" placeholder="Nama Lengkap Mahasiswa">
                         <label for="inputName">Nama Mahasiswa</label>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-floating">
                         <input type="text" name="nim" class="form-control" id="inputNIM" placeholder="Nomor Induk Mahasiswa">
                         <label for="inputNIM">Nomor Induk Mahasiswa</label>
@@ -41,7 +39,7 @@
                 <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
                 </form>
-        </div>
+            </div>
         </div>
     </div>
           <!-- Table with stripped rows -->
@@ -66,7 +64,7 @@
                         <td>{{ $student->getGrades() }}</td>
                         <td>
                             <a href="/student/{{ $student->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                            <a href="/student/{{ $student->id }}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau dihapus?')">Delete</a>
                         </td>
                     </tr>
                 @endforeach

@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('layouts.master');
 // });
 
-Route::get('/', 'StudentController@index');
+Route::get('/', 'DashboardController@index');
+
+Route::get('/student', 'StudentController@index');
 Route::post('/student/create', 'StudentController@create');
 Route::get('/student/{id}/edit', 'StudentController@edit');
 Route::post('/student/{id}/update', 'StudentController@update');

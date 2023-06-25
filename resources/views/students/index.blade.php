@@ -55,6 +55,7 @@
                 </tr>
             </thead>
             <tbody>
+                @if($students->count() > 0)
                 @foreach ($students as $index => $student)
                     <tr>
                         <td>{{ $index + 1 }}</td>
@@ -68,6 +69,11 @@
                         </td>
                     </tr>
                 @endforeach
+                @else
+                <tr>
+                    <td colspan="6" class="text-center p-5">Tidak Ada Data Mahasiswa</td>
+                </tr>
+            @endif
             </tbody>
           </table>
           <!-- End Table with stripped rows -->
